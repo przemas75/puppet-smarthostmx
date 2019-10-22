@@ -6,13 +6,13 @@
 class smarthost::params {
 
     # Default MTA selection based on OS & Version
-    if $::operatingsystemmajrelease {
+    if $facts['operatingsystemmajrelease'] {
         $osver = "${::operatingsystem}-${::operatingsystemmajrelease}"
     } else {
         $osver = "${::operatingsystem}-${::operatingsystemrelease}"
     }
 
-    case $::operatingsystem {
+    case $facts['operatingsystem'] {
       'Ubuntu' : {
         $smarthost = 'localhost'
       }
