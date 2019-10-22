@@ -11,11 +11,11 @@ class smarthost (
 ) inherits smarthost::params {
 
   if defined('$osver') {
-    notify("System version set to: ${osver}")
+    err("System version set to: ${osver}")
   }
 
   if ! $osver {
-    notify("System version not set: ${osver}")
+    err("System version not set: ${osver}")
   }
 
   case $mta {
