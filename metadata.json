@@ -1,12 +1,12 @@
 {
-  "name": "justinjl-smarthost",
+  "name": "przemas75-smarthostmxmx",
   "version": "1.0.0",
-  "author": "justinjl",
-  "summary": "Configures simple smtp smarthost",
+  "author": "przemas75",
+  "summary": "Configures simple smtp smarthostmx",
   "license": "Apache-2.0",
-  "source": "https://github.com/justinjl6/puppet-smarthost/",
-  "project_page": "https://github.com/justinjl6/puppet-smarthost/",
-  "issues_url": "https://github.com/justinjl6/puppet-smarthost/",
+  "source": "https://github.com/przemas75/puppet-smarthostmx/",
+  "project_page": "https://github.com/przemas75/puppet-smarthostmx/",
+  "issues_url": "https://github.com/przemas75/puppet-smarthostmx/",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
   ],
