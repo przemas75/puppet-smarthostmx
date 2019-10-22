@@ -13,8 +13,8 @@ describe 'smarthost' do
         when 'Debian'
           context 'd' do
             # if :operatingsystemmajrelease == '8'
-            # it { is_expected.to contain_class('smarthost') }
-            # it { is_expected.to contain_class('smarthost::params') }
+            it { is_expected.to contain_class('smarthost') }
+            it { is_expected.to contain_class('smarthost::params') }
             it { is_expected.to contain_class('smarthost::exim4').that_comes_before('Class[smarthost::exim4::install]') }
             it { is_expected.to contain_class('smarthost::exim4::install').that_comes_before('Class[smarthost::exim4::config]') }
             it { is_expected.to contain_class('smarthost::exim4::config').that_notifies('Class[smarthost::exim4::service]') }
