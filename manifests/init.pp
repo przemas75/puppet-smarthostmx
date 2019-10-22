@@ -10,7 +10,11 @@ class smarthost (
   $domain    = $::fqdn,
 ) inherits smarthost::params {
 
-  if ! $osver !=  'unset' {
+  if defined('$osver') {
+    fail("System version set to: \$osver")
+  }
+
+  if ! $osver {
     fail("System version not set: \$osver")
   }
 
