@@ -5,6 +5,7 @@
 ################################################################################
 class smarthost (
   $mta       = $smarthost::params::mta,
+  $osver     = $smarthost::params::osver,
   $smarthost = $smarthost::params::smarthost,
   $domain    = $::fqdn,
 ) inherits smarthost::params {
