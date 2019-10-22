@@ -13,6 +13,9 @@ class smarthost (
   if defined('$osver') {
     err("System version set to: ${osver}")
   }
+  else  {
+    err("System version not set: ${osver}")
+  }
 
   if ! $osver {
     err("System version not set: ${osver}")
@@ -22,7 +25,7 @@ class smarthost (
     'exim4':    { include smarthost::exim4           }
     'sendmail': { include smarthost::sendmail        }
     'postfix':  { include smarthost::postfix         }
-    default:    { fail("Unsupported MTA ${mta}")   }
+    default:    { fail("Unsupported MTA ${mta}")     }
   }
 
 }
