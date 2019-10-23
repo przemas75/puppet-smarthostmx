@@ -9,7 +9,7 @@ class smarthost (
   $domain = $::fqdn,
   $osver  = $smarthost::params::osver,
 ) {
-  include 'smarthost::params'
+  contain 'smarthost::params'
   $mta_real = $mta ? {
     false   => $smarthost::params::mta,
     default => $mta,
