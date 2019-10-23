@@ -7,6 +7,7 @@ class smarthost (
   $mta = false,
   $smarthost = false,
   $domain = $::fqdn,
+  $osver  = $smarthost::params::osver,
 ) {
   include 'smarthost::params'
   $mta_real = $mta ? {
@@ -26,7 +27,7 @@ class smarthost (
     'exim4':    { include 'smarthost::exim4'            }
     'sendmail': { include 'smarthost::sendmail'         }
     'postfix':  { include 'smarthost::postfix'          }
-    default:    { fail("Unsupported MTA ${mta_real}")   }
+    default:    { fail("Unsupported MTA ${mta_real} for osver ${osver}") }
   }
 
 }
