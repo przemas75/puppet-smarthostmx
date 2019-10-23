@@ -57,7 +57,7 @@ class smarthost::params {
     'exim4':    { include 'smarthost::exim4'            }
     'sendmail': { include 'smarthost::sendmail'         }
     'postfix':  { include 'smarthost::postfix'          }
-    default:    { fail("Unsupported MTA ${mta_real} for osver ${osver}") }
+    default:    { fail("Unsupported MTA ${mta} for osver ${osver}") }
   }
 
 
