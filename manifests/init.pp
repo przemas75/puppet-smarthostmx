@@ -4,13 +4,13 @@
 #
 ################################################################################
 class smarthost (
-  $mta = undef,
-  $smarthost = undef,
+  $mta = false,
+  $smarthost = false,
   $domain = $::fqdn,
 ) {
   include 'smarthost::params'
   $mta_real = $mta ? {
-    undef   => $smarthost::params::mta,
+    false   => $smarthost::params::mta,
     default => $mta,
   }
 
