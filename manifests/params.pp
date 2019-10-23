@@ -13,7 +13,7 @@ class smarthost::params {
       $osver = "${::operatingsystem}-${::operatingsystemrelease}"
   }
 
-  if ! defined($smarthost) {
+  if ! $smarthost {
     case $facts['operatingsystem'] {
       'Ubuntu' : {
         $smarthost = 'localhost'
