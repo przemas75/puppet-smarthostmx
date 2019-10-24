@@ -13,7 +13,6 @@ class smarthost::params {
       $osver = "${::operatingsystem}-${::operatingsystemrelease}"
   }
 
-  if ! defined($smarthost) {
     case $facts['operatingsystem'] {
       'Ubuntu' : { $smarthost = 'localhost' }
       'RedHat' : { $smarthost = 'localhost' }
@@ -23,9 +22,7 @@ class smarthost::params {
         fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
       }
     }
-  }
 
-  if ! defined($mta) {
     case $osver {
         'CentOS-5':         { $mta = 'sendmail' }
         'CentOS-6':         { $mta = 'postfix'  }
@@ -43,7 +40,6 @@ class smarthost::params {
         'Ubuntu-14.04':     { $mta = 'postfix'  }
         default:            { $mta = false      }
     }
-  }
 
   case $mta {
     'exim4':    { include 'smarthost::exim4'            }
