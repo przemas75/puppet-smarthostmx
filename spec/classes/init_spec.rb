@@ -8,10 +8,10 @@ describe 'smarthost' do
         facts
       end
 
-      context 'sdf' do
+      context 'with defaults' do
         case facts[:operatingsystem]
         when 'Debian'
-          context 'd' do
+          context 'when it is debian' do
             # if :operatingsystemmajrelease == '8'
             it { is_expected.to contain_class('smarthost') }
             it { is_expected.to contain_class('smarthost::params') }
