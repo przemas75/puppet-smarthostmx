@@ -4,9 +4,8 @@
 #
 ################################################################################
 class smarthost (
-  $mta       = $smarthost::params::mta,
-  $smarthost = $smarthost::params::smarthost,
-  $domain    = $::fqdn,
+  Optional[String] $mta       = $smarthost::params::mta,
+  Optional[String] $smarthost = $smarthost::params::smarthost,
 ) inherits smarthost::params {
 
 }
