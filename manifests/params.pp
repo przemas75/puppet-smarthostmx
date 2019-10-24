@@ -4,8 +4,8 @@
 #
 ################################################################################
 class smarthost::params {
-  $mta       = undef
-  $smarthost = undef
+  # $mta       = undef
+  # $smarthost = undef
 
   if $facts['operatingsystemmajrelease'] {
       $osver = "${::operatingsystem}-${::operatingsystemmajrelease}"
@@ -15,18 +15,10 @@ class smarthost::params {
 
   if ! $smarthost {
     case $facts['operatingsystem'] {
-      'Ubuntu' : {
-        $smarthost = 'localhost'
-      }
-      'RedHat' : {
-        $smarthost = 'localhost'
-      }
-      'CentOS' : {
-        $smarthost = 'localhost'
-      }
-      'Debian' : {
-        $smarthost = undef
-      }
+      'Ubuntu' : { $smarthost = 'localhost' }
+      'RedHat' : { $smarthost = 'localhost' }
+      'CentOS' : { $smarthost = 'localhost' }
+      'Debian' : { $smarthost = undef       }
       default     : {
         fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
       }
