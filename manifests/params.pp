@@ -27,7 +27,9 @@ class smarthost::params {
         'CentOS-5':         { $mta = 'sendmail' }
         'CentOS-6':         { $mta = 'postfix'  }
         'CentOS-7':         { $mta = 'postfix'  }
-        'Debian-7':         { $mta = 'exim4'    }
+        'Debian-8':         { $mta = 'exim4'    }
+        'Debian-9':         { $mta = 'exim4'    }
+        'Debian-10':         { $mta = 'exim4'    }
         /^Debian-jessie/:   { $mta = 'exim4'    }
         'CloudLinux-5':     { $mta = 'sendmail' }
         'CloudLinux-6':     { $mta = 'postfix'  }
