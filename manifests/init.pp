@@ -6,7 +6,7 @@
 class smarthost (
   Optional[String] $mta       = $smarthost::params::mta,
   Optional[String] $smarthost = $smarthost::params::smarthost,
-  Struct $paths     = $smarthost::params::paths,
+  Struct $paths               = $smarthost::paths,
   $operatingsystem            = $::operatingsystem,
 ) inherits smarthost::params {
 
