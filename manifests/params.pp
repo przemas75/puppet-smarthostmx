@@ -16,15 +16,6 @@ class smarthost::params {
       }
     }
 
-    case $facts['operatingsystem'] {
-      'Ubuntu' : { $smarthost = 'localhost' }
-      'RedHat' : { $smarthost = 'localhost' }
-      'CentOS' : { $smarthost = 'localhost' }
-      'Debian' : { $smarthost = undef       }
-      default     : {
-        fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
-      }
-    }
 
   $paths = {
       make                => '/usr/bin/make',
