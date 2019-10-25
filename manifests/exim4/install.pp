@@ -5,7 +5,7 @@
 ################################################################################
 class smarthost::exim4::install {
 
-    $paths      = $smarthost::params::paths
+    $paths      = $smarthost::paths
     $packages   = $smarthost::exim4::packages
     $services   = $smarthost::exim4::services
     $smarthost  = $smarthost::smarthost
