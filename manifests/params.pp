@@ -17,9 +17,6 @@ class smarthost::params {
     }
 
 
-  $paths = {
-      make                => '/usr/bin/make',
-      update_exim4_conf   => '/usr/sbin/update-exim4.conf',
-  }
+
 
 }
