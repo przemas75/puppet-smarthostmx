@@ -7,12 +7,14 @@ class smarthost (
   Optional[String] $mta       = $smarthost::params::mta,
   Optional[String] $smarthost = $smarthost::params::smarthost,
   Optional[String] $paths     = $smarthost::params::paths,
-  $osfamily                   = $::osfamily,
+  $operatingsystem            = $::operatingsystem,
 ) inherits smarthost::params {
 
-  contain 'smarthost::exim4'
-  contain 'smarthost::postfix'
-  contain 'smarthost::sendmail'
+
+
+  if $mta and $mta != false {
+    include "::smarthost::${mta}"
+  }
 
   $paths = {
       make                => '/usr/bin/make',
