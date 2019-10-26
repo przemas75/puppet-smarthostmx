@@ -8,6 +8,8 @@ class smarthost::exim4 {
   $packages   = [ 'exim4' ]
   $services   = [ 'exim4' ]
 
+
+  include ::smarthost
   contain smarthost::exim4::install
   contain smarthost::exim4::config
   contain smarthost::exim4::service
