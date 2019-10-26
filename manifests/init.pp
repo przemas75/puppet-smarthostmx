@@ -13,7 +13,7 @@ class smarthost (
 
 
   if $mta and $mta != false {
-    include "::smarthost::${mta}"
+    contain "::smarthost::${mta}"
   }
 
   $paths = {
