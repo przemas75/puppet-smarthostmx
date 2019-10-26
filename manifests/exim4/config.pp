@@ -7,6 +7,7 @@ class smarthost::exim4::config {
 
     $packages   = $smarthost::exim4::packages
     $services   = $smarthost::exim4::services
+    include smarthost
 
     file { '/etc/mailname' :
         owner   => 'root',
