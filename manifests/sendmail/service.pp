@@ -5,7 +5,6 @@
 ################################################################################
 class smarthost::sendmail::service {
 
-    $paths      = $smarthost::params::paths
     $packages   = $smarthost::sendmail::packages
     $services   = $smarthost::sendmail::services
 

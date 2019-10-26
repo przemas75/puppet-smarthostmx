@@ -5,10 +5,8 @@
 ################################################################################
 class smarthost::exim4::config {
 
-    $paths      = $smarthost::paths
     $packages   = $smarthost::exim4::packages
     $services   = $smarthost::exim4::services
-    $smarthost  = $smarthost::smarthost
 
     file { '/etc/mailname' :
         owner   => 'root',

@@ -5,10 +5,8 @@
 ################################################################################
 class smarthost::postfix::config {
 
-    $paths      = $smarthost::params::paths
     $packages   = $smarthost::postfix::packages
     $services   = $smarthost::postfix::services
-    $smarthost  = $smarthost::params::smarthost
 
     case $::operatingsystem {
         'CentOS':       { $template_main_cf = 'main.cf.RedHat.erb' }
