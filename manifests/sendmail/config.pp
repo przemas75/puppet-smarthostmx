@@ -15,7 +15,7 @@ class smarthost::sendmail::config {
         content => template('smarthost/sendmail/sendmail.mc.erb'),
     }
 
-    $make = $paths['make']
+    $make = $smarthost::paths['make']
     exec { 'make_sendmail_mc' :
         command     => "${make} -C /etc/mail",
         cwd         => '/etc/mail',
