@@ -3,7 +3,7 @@
 # Class to install exim4
 #
 ################################################################################
-class smarthost::exim4::install {
+class smarthost::exim4::install inherits smarthost {
 
     # $paths      = $smarthost::paths
     $packages   = $smarthost::exim4::packages
