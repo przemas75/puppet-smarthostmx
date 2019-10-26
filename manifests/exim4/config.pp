@@ -24,9 +24,9 @@ class smarthost::exim4::config {
         notify  => Service[$services],
     }
 
-    $update_exim4_conf = $smarthost::paths['update_exim4_conf']
+    # $update_exim4_conf = $smarthost::paths['update_exim4_conf']
     exec { 'update_exim4_conf' :
-        command     => "${update_exim4_conf} -o /etc/exim4/exim4.conf",
+        command     => "${smarthost::paths} -o /etc/exim4/exim4.conf",
         cwd         => '/etc/exim4',
         refreshonly => true,
         subscribe   => File['/etc/exim4/update-exim4.conf.conf'],
